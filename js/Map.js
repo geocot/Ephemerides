@@ -8,13 +8,15 @@ require(
   "dojo/parser", 
   "dojo/on", 
   "js/sunrisesunset", 
-  "dijit/layout/ContentPane"
+  "dijit/layout/ContentPane", 
+  "dijit/layout/LayoutContainer", 
+  "dijit/layout/BorderContainer"
 
   	], 
 
   function(
     Map, Point, SpatialReference,
-    ready, parser, on, sunrisesunset, ContentPane   
+    ready, parser, on, sunrisesunset, ContentPane, LayoutContainer, BorderContainer   
     ) {
 // @formatter:on
 
@@ -27,7 +29,7 @@ require(
 
     // Create the map
     mapMain = new Map("LaCarte", {
-      basemap : "national-geographic",
+      basemap : "satellite",
       center : [-71, 46],
       zoom : 8,
     });
