@@ -1,44 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Tutorial: Hello Dojo!</title>
-	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.9.3/dijit/themes/claro/claro.css" media="screen">
-	<link rel="stylesheet" href="http://js.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css">
-  	<script src="http://js.arcgis.com/3.10/"></script>
-</head>
-<body>
-    <h1 id="greeting">Hello</h1>
-    <!-- load Dojo-->
-    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.3/dojo/dojo.js"
-            data-dojo-config="async: true"></script>
-			 
-</body class="tundra">
-<script>
-require({
-	baseUrl: "",                   //"/dojomodule/",
-    packages: [
-	 { name: "dojo", location: "//ajax.googleapis.com/ajax/libs/dojo/1.9.3/dojo" },
-	 { name: "digit", location: "//ajax.googleapis.com/ajax/libs/dojo/1.9.3/digit" },
-     { name: "js", location: "js" } 
-	 ]
-	 }, ["js/sunrisesunset"], function(Ville){
-  var Qc = new Ville( 46.845, 71.335, -4, 12, 08, 2014);
-  console.log(Qc.latitude);
-  console.log(Qc.Lever());
-  console.log(Qc.Coucher());
-  
-  Qc.latitude = 50;
-  console.log(Qc.latitude);
-  console.log(Qc.Lever());
-  console.log(Qc.Coucher());
-  Qc.LienFuseauxHoraire("www.esri.ca");
-  console.log(Qc.URLFuseauxHoraire);
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Work with the Map</title>
 
-});
+    <!-- Configure dojo for asynchronous module loading -->
+    <script>
+      var dojoConfig = {
+        async : true,
+        paths: { js: location.pathname.replace(/\/[^/]+$/, "") + "/js" }
+              };
+    </script>
 
-</script>
+    <!-- Reference libraries. The first CSS is a Dojo theme that gives dijits a consistent style. -->
+    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/nihilo/nihilo.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="http://js.arcgis.com/3.9/"></script>
+    <script src="js/map.js"></script>
 
 
+  </head>
 
+  <body class="nihilo">
+    <div id="LaCarte" >
+	</div>
+  </body>
 </html>

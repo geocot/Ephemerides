@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial: Hello Dojo!</title>
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.9.3/dijit/themes/claro/claro.css" media="screen">
+</head>
+<body>
+    <h1 id="greeting">Hello</h1>
+    <!-- load Dojo-->
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.3/dojo/dojo.js"
+            data-dojo-config="async: true"></script>
+			 
+</body>
+<script>
+require({
+	baseUrl: "", // "/dojomodule/",
+    packages: [
+	 { name: "dojo", location: "//ajax.googleapis.com/ajax/libs/dojo/1.9.3/dojo" },
+	 { name: "digit", location: "//ajax.googleapis.com/ajax/libs/dojo/1.9.3/digit" },
+     { name: "js", location: "js" } 
+	 ]
+	 }, ["js/sunrisesunset"], function(Ville){
+  var Qc = new Ville( 46.845, 71.335, -4, 12, 08, 2014);
+  console.log(Qc.latitude);
+  console.log(Qc.Lever());
+  console.log(Qc.Coucher());
+  
+  Qc.latitude = 50;
+  console.log(Qc.latitude);
+  console.log(Qc.Lever());
+  console.log(Qc.Coucher());
+  Qc.LienFuseauxHoraire("www.esri.ca");
+  console.log(Qc.URLFuseauxHoraire);
+
+});
+
+</script>
+
+
+
+</html>
