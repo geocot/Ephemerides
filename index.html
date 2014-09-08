@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Work with the Map</title>
+    <title>Sunrise-Sunset</title>
 
     <!-- Configure dojo for asynchronous module loading -->
     <script>
@@ -23,7 +23,13 @@
   </head>
 
   <body class="nihilo">
-    <div id="LaCarte" >
+  	<div id="header" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
+		<div id="titre"></div>
+	</div>
+    
+     <div id="LaCarte" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+      </div>
+    
 	</div>
   </body>
 </html>

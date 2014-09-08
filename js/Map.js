@@ -7,13 +7,14 @@ require(
   "dojo/ready", 
   "dojo/parser", 
   "dojo/on", 
-  "js/sunrisesunset"
+  "js/sunrisesunset", 
+  "dijit/layout/ContentPane"
 
   	], 
 
   function(
     Map, Point, SpatialReference,
-    ready, parser, on, sunrisesunset   
+    ready, parser, on, sunrisesunset, ContentPane   
     ) {
 // @formatter:on
 
