@@ -10,13 +10,16 @@ require(
   "js/sunrisesunset", 
   "dijit/layout/ContentPane", 
   "dijit/layout/LayoutContainer", 
-  "dijit/layout/BorderContainer"
+  "dijit/layout/BorderContainer", 
+  "esri/layers/FeatureLayer"
 
   	], 
 
   function(
     Map, Point, SpatialReference,
-    ready, parser, on, sunrisesunset, ContentPane, LayoutContainer, BorderContainer   
+    ready, parser, on, sunrisesunset,
+    ContentPane, LayoutContainer, BorderContainer, 
+    FeatureLayer   
     ) {
 // @formatter:on
 
@@ -28,15 +31,19 @@ require(
     
 
     // Create the map
-    mapMain = new Map("LaCarte", {
+    map = new Map("LaCarte", {
       basemap : "satellite",
-      center : [-71, 46],
-      zoom : 8,
+      center : [-96, 42],
+      zoom : 4,
     });
+    
+    var coucheVilles = new FeatureLayer("http://services.arcgis.com/pGoeHmYZOCXOU5IQ/arcgis/rest/services/CitiesOfTheWorld/FeatureServer/0");
+    map.addLayer(coucheVilles);
     
     var LC = new sunrisesunset( 46.845, 71.335, -3, 26, 08, 2014);
 	
-	mapMain.on("click", function(evt){
+
+	map.on("click", function(evt){
 		//map.graphics.clear();
 		console.log("Lat:" + evt.mapPoint.getLatitude());
 		console.log("Long:" + evt.mapPoint.getLongitude());
