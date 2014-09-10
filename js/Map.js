@@ -14,7 +14,12 @@ require(
   "esri/layers/FeatureLayer", 
   "esri/lang", "esri/graphic", "esri/symbols/SimpleMarkerSymbol",
   "dojo/html", "dojo/number", 
-  "js/coordinatesTools"
+  "js/coordinatesTools", "dojox/charting/Chart",
+    "dojox/charting/plot2d/Pie",
+    "dojox/charting/action2d/Tooltip",
+    "dojox/charting/action2d/MoveSlice",
+    "dojox/charting/themes/Claro"
+
 
   	], 
 
@@ -22,7 +27,7 @@ require(
     Map, Point, SpatialReference,
     ready, parser, on, sunrisesunset,
     ContentPane, LayoutContainer, BorderContainer, 
-    FeatureLayer, esriLang, Graphic, SimpleMarkerSymbol, html, number, coordinatesTools
+    FeatureLayer, esriLang, Graphic, SimpleMarkerSymbol, html, number, coordinatesTools, Chart, Pie, Tooltip, MoveSlice, theme
     ) {
 // @formatter:on
 
@@ -56,10 +61,23 @@ require(
 		map.graphics.clear();
 	};
 	
+	//Define Pie Chart
+	var pieChart = new Chart('pieChartGraph');
+	pieChart.setTheme(theme);
 	
 	map.on("load", function(){
 		 map.graphics.enableMouseEvents(); //load mouse event on graphic layer.
 		 map.graphics.on("mouse-out", closeDialog);
+		  //Add Pie chart to maps.		  
+		  pieChart.addPlot("default", {
+       		type: Pie,
+        	markers: true,
+        	radius:60
+    		});
+    	 // Create the tooltip
+    	   var tip = new Tooltip(pieChart,"default");
+ 	    // Create the slice mover
+    	   var mag = new MoveSlice(pieChart,"default");
 
 		});
 	
@@ -109,7 +127,17 @@ require(
   		  //Set infos of ephemerides
   		  html.set(dojo.byId("infosEphemerides"), "Sunrise: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Lever()) + "<br>Sunset: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Coucher()) +"<br>daytime: "+ ephemeridesObj.DureeJour() ); 
 		  
-          
+		  //var chartData = [80,20];
+		  var dureeday = 55;
+		  var dureenight = 45;
+    	  //pieChart.addSeries("Day and Night time",chartData);
+    	  pieChart.addSeries("Day and Night time",[{y: dureeday, text: "Day",   stroke: "white", tooltip: dureeday},
+    	  {y: dureenight, text: "NightTime",   stroke: "white", tooltip: dureenight}]);
+    		pieChart.render();
+    		//Set background transparent
+    		pieChart.surface.rawNode.childNodes[1].setAttribute('fill-opacity','0');
+			pieChart.surface.rawNode.childNodes[2].setAttribute('stroke-opacity','0');
+			pieChart.surface.rawNode.childNodes[3].setAttribute('fill-opacity','0');
 		  /*
 		map.on("click", function(evt){
 		//map.graphics.clear();
