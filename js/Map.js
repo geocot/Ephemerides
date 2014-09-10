@@ -13,7 +13,8 @@ require(
   "dijit/layout/BorderContainer", 
   "esri/layers/FeatureLayer", 
   "esri/lang", "esri/graphic", "esri/symbols/SimpleMarkerSymbol",
-  "dojo/html", "dojo/number"
+  "dojo/html", "dojo/number", 
+  "js/coordinatesTools"
 
   	], 
 
@@ -21,7 +22,7 @@ require(
     Map, Point, SpatialReference,
     ready, parser, on, sunrisesunset,
     ContentPane, LayoutContainer, BorderContainer, 
-    FeatureLayer, esriLang, Graphic, SimpleMarkerSymbol, html, number
+    FeatureLayer, esriLang, Graphic, SimpleMarkerSymbol, html, number, coordinatesTools
     ) {
 // @formatter:on
 
@@ -85,28 +86,29 @@ require(
           var latitude = esriLang.substitute(evt.graphic.attributes,"${CoordY}"); 
           var longitude = esriLang.substitute(evt.graphic.attributes,"${CoordX}");
           var fuseauHoraire  = esriLang.substitute(evt.graphic.attributes,"${ZONE_}");
+          var city = esriLang.substitute(evt.graphic.attributes,"${City}");
+          var country = esriLang.substitute(evt.graphic.attributes,"${Country}");
+          var population = esriLang.substitute(evt.graphic.attributes,"${Population:NumberFormat}");
+          var timeZone = esriLang.substitute(evt.graphic.attributes,"${ZONE_}");
           
-          var t = "Country: ${Country}<br>"
-          	+"City: ${City}<br>"
-          	+"Pop: ${Population:NumberFormat} habs.<br>"
-            +"Latitude: ${CoordY}<br>"
-            +"Longitude: ${CoordX}<br>"
-            +"Time zone: ${ZONE_}";
-  
-          var content = esriLang.substitute(evt.graphic.attributes,t);
           var highlightGraphic = new Graphic(evt.graphic.geometry,highlightSymbol);
           map.graphics.add(highlightGraphic);
   		  
   		  //Set ephemerides object infos
   		  ephemeridesObj.latitude = parseFloat(latitude);
-  		  ephemeridesObj.longitude = parseFloat(longitude); //Mettre le -1 dans l'objet ephemeride
+  		  ephemeridesObj.longitude = parseFloat(longitude); 
           ephemeridesObj.Decalage = parseInt(fuseauHoraire);
           
+    	  //Add formated latitude and longitude to content
+  		  var content = "Country: " +  country + "<br>City: " + city + "<br>Population: " + population +
+  		  "Habs.<br>Time Zone: " + timeZone + "<br>Latitude: "+ coordinatesTools.DDtoDMStoTXT(latitude) + "<br>Longitude: " + coordinatesTools.DDtoDMStoTXT(longitude); 
+          
+                   
   		  //Set infos of the city
   		  html.set(dojo.byId("infosVilles"), content);
   		  //Set infos of ephemerides
   		  html.set(dojo.byId("infosEphemerides"), "Sunrise: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Lever()) + "<br>Sunset: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Coucher()) +"<br>daytime: "+ ephemeridesObj.DureeJour() ); 
-
+		  
           
 		  /*console.log("lat =" + ephemeridesObj.latitude);
 		  console.log("long =" + ephemeridesObj.longitude);
