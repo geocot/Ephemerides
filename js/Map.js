@@ -72,7 +72,7 @@ require(
   		"type": "esriSMS",
   		"style": "esriSMSCircle",
   		"outline": {
-    	"color": [0,255,0,255],
+    	"color": [255,171,38,255],
     	"width": 2,
     	"type": "esriSLS",
     	"style": "esriSLSSolid"}
