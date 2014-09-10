@@ -36,6 +36,27 @@ body {
 	background-position: right bottom;
 }
 
+#infosVilles{
+	font-family: 'CARTNIST', sans-serif;
+	color: white;
+	font-size:14px;	
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	z-index:5;
+}
+
+
+#infosEphemerides{
+	font-family: 'CARTNIST', sans-serif;
+	color: orange;
+	font-size:12px;	
+	position: absolute;
+	top: 0px;
+	left: 400px;
+	z-index:5;
+}
+
 #title{
 	font-family: 'CARTNIST', sans-serif;
 	color: white;
