@@ -99,9 +99,9 @@ require(
   		  ephemeridesObj.longitude = parseFloat(longitude); 
           ephemeridesObj.Decalage = parseInt(fuseauHoraire);
           
-    	  //Add formated latitude and longitude to content
+    	  //Add formated latitude and longitude and others to content
   		  var content = "Country: " +  country + "<br>City: " + city + "<br>Population: " + population +
-  		  "Habs.<br>Time Zone: " + timeZone + "<br>Latitude: "+ coordinatesTools.DDtoDMStoTXT(latitude) + "<br>Longitude: " + coordinatesTools.DDtoDMStoTXT(longitude); 
+  		  " Habs.<br>Time Zone: " + timeZone + "<br>Latitude: "+ coordinatesTools.DDtoDMStoTXT(latitude) + "<br>Longitude: " + coordinatesTools.DDtoDMStoTXT(longitude); 
           
                    
   		  //Set infos of the city
@@ -110,25 +110,8 @@ require(
   		  html.set(dojo.byId("infosEphemerides"), "Sunrise: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Lever()) + "<br>Sunset: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Coucher()) +"<br>daytime: "+ ephemeridesObj.DureeJour() ); 
 		  
           
-		  /*console.log("lat =" + ephemeridesObj.latitude);
-		  console.log("long =" + ephemeridesObj.longitude);
-		  console.log("fuseau =" + ephemeridesObj.Decalage);
-		  console.log(ephemeridesObj.Lever());
-		  console.log(ephemeridesObj.Coucher());
-			
-          //dialog.setContent(content);
-
-          //domStyle.set(dialog.domNode, "opacity", 0.85);
-          //dijitPopup.open({
-          //  popup: dialog, 
-          //  x: evt.pageX,
-          //  y: evt.pageY
-          //});
-        });
-	
-	
-	
-	map.on("click", function(evt){
+		  /*
+		map.on("click", function(evt){
 		//map.graphics.clear();
 		console.log("Lat:" + evt.mapPoint.getLatitude());
 		console.log("Long:" + evt.mapPoint.getLongitude());
