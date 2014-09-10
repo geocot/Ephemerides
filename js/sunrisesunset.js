@@ -107,7 +107,7 @@ _EquationTempsMinuteSec : function()
 
 Lever : function ()
 	{
-	return  this.Conversion_DecJour_Heure((Math.floor(12-this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+this.longitude*4/60+this.Decalage)+Math.round((((12-this._AngleHoraireHeure())+this._EquationTempsMinuteDEC()/60+this.longitude*4/60+this.Decalage)-Math.floor((12-this._AngleHoraireHeure())+this._EquationTempsMinuteDEC()/60+this.longitude*4/60+this.Decalage))*60,0)/60)/24);
+	return  this.Conversion_DecJour_Heure((Math.floor(12-this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)+Math.round((((12-this._AngleHoraireHeure())+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)-Math.floor((12-this._AngleHoraireHeure())+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage))*60,0)/60)/24);
 	},//virgule entre chaque fonction
 
 Conversion_DecJour_Heure : function (HeureDEC) //(HeureDEC)
@@ -128,7 +128,7 @@ DureeJour :	function () //(LAT, LONG, Decalage, LeJour, LeMois, LAn)
 
 Coucher : function() // (LAT, LONG, Decalage, LeJour, LeMois, LAn)
 	{
-	return this.Conversion_DecJour_Heure((Math.floor(12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+this.longitude*4/60+this.Decalage)+Math.round(((12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+this.longitude*4/60+this.Decalage)-Math.floor(12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+this.longitude*4/60+this.Decalage))*60,0)/60)/24);
+	return this.Conversion_DecJour_Heure((Math.floor(12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)+Math.round(((12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)-Math.floor(12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage))*60,0)/60)/24);
 	},//virgule entre chaque fonction
 
 	// Donne les minutes en bas de zero sur 2 chiffres
@@ -140,16 +140,7 @@ _deuxchiffres : function (nombre)
 	{retour = nombre}
 
 	return retour
-},//virgule entre chaque fonction
-
-LienFuseauxHoraire	: function(Valeur)
-{
-this.URLFuseauxHoraire = Valeur
 }
-
-	
-	
-
 	
 
   });

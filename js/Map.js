@@ -97,14 +97,17 @@ require(
           var highlightGraphic = new Graphic(evt.graphic.geometry,highlightSymbol);
           map.graphics.add(highlightGraphic);
   		  
+  		  //Set ephemerides object infos
+  		  ephemeridesObj.latitude = parseFloat(latitude);
+  		  ephemeridesObj.longitude = parseFloat(longitude); //Mettre le -1 dans l'objet ephemeride
+          ephemeridesObj.Decalage = parseInt(fuseauHoraire);
+          
   		  //Set infos of the city
   		  html.set(dojo.byId("infosVilles"), content);
   		  //Set infos of ephemerides
   		  html.set(dojo.byId("infosEphemerides"), "Sunrise: " + ephemeridesObj.Lever() + "<br>Sunset: " + ephemeridesObj.Coucher());
   		  
-  		  ephemeridesObj.latitude = parseFloat(latitude);
-  		  ephemeridesObj.longitude = parseFloat(longitude * -1); //Mettre le -1 dans l'objet ephemeride
-          ephemeridesObj.Decalage = parseInt(fuseauHoraire);
+
           
 		  /*console.log("lat =" + ephemeridesObj.latitude);
 		  console.log("long =" + ephemeridesObj.longitude);
