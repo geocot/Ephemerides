@@ -13,7 +13,7 @@ require(
   "dijit/layout/BorderContainer", 
   "esri/layers/FeatureLayer", 
   "esri/lang", "esri/graphic", "esri/symbols/SimpleMarkerSymbol",
-  "dojo/html"
+  "dojo/html", "dojo/number"
 
   	], 
 
@@ -21,7 +21,7 @@ require(
     Map, Point, SpatialReference,
     ready, parser, on, sunrisesunset,
     ContentPane, LayoutContainer, BorderContainer, 
-    FeatureLayer, esriLang, Graphic, SimpleMarkerSymbol, html
+    FeatureLayer, esriLang, Graphic, SimpleMarkerSymbol, html, number
     ) {
 // @formatter:on
 
@@ -48,8 +48,8 @@ require(
     
     //Initialize the object
     var ephemeridesObj = new sunrisesunset( 48.8819970629341, -2.43299734457971, 1, 09, 09,2014);
-    console.log("qc=" + ephemeridesObj.Lever())
-    console.log("qc=" + ephemeridesObj.Coucher())
+    //console.log("qc=" + ephemeridesObj.Lever())
+    //console.log("qc=" + ephemeridesObj.Coucher())
 	
 	function closeDialog(){
 		map.graphics.clear();
@@ -105,8 +105,7 @@ require(
   		  //Set infos of the city
   		  html.set(dojo.byId("infosVilles"), content);
   		  //Set infos of ephemerides
-  		  html.set(dojo.byId("infosEphemerides"), "Sunrise: " + ephemeridesObj.Lever() + "<br>Sunset: " + ephemeridesObj.Coucher());
-  		  
+  		  html.set(dojo.byId("infosEphemerides"), "Sunrise: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Lever()) + "<br>Sunset: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Coucher()) +"<br>daytime: "+ ephemeridesObj.DureeJour() ); 
 
           
 		  /*console.log("lat =" + ephemeridesObj.latitude);

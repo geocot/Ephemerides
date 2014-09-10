@@ -107,7 +107,7 @@ _EquationTempsMinuteSec : function()
 
 Lever : function ()
 	{
-	return  this.Conversion_DecJour_Heure((Math.floor(12-this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)+Math.round((((12-this._AngleHoraireHeure())+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)-Math.floor((12-this._AngleHoraireHeure())+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage))*60,0)/60)/24);
+	return  (Math.floor(12-this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)+Math.round((((12-this._AngleHoraireHeure())+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)-Math.floor((12-this._AngleHoraireHeure())+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage))*60,0)/60)/24;
 	},//virgule entre chaque fonction
 
 Conversion_DecJour_Heure : function (HeureDEC) //(HeureDEC)
@@ -122,13 +122,13 @@ Conversion_DecJour_Heure : function (HeureDEC) //(HeureDEC)
 DureeJour :	function () //(LAT, LONG, Decalage, LeJour, LeMois, LAn)
 	{
 	DJ_DEC = this.Coucher() - this.Lever()
-	return Conversion_DecJour_Heure(DJ_DEC)
+	return this.Conversion_DecJour_Heure(DJ_DEC)
 	},//virgule entre chaque fonction
 
 
 Coucher : function() // (LAT, LONG, Decalage, LeJour, LeMois, LAn)
 	{
-	return this.Conversion_DecJour_Heure((Math.floor(12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)+Math.round(((12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)-Math.floor(12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage))*60,0)/60)/24);
+	return (Math.floor(12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)+Math.round(((12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)-Math.floor(12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage))*60,0)/60)/24;
 	},//virgule entre chaque fonction
 
 	// Donne les minutes en bas de zero sur 2 chiffres
@@ -140,8 +140,8 @@ _deuxchiffres : function (nombre)
 	{retour = nombre}
 
 	return retour
-}
-	
+},//virgule entre chaque fonction
+
 
   });
 });
