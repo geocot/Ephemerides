@@ -121,18 +121,19 @@ require(
   		  var content = "Country: " +  country + "<br>City: " + city + "<br>Population: " + population +
   		  " Habs.<br>Time Zone: " + timeZone + "<br>Latitude: "+ coordinatesTools.DDtoDMStoTXT(latitude) + "<br>Longitude: " + coordinatesTools.DDtoDMStoTXT(longitude); 
           
+          //Get day time and night time
+          var dayTime = ephemeridesObj.DureeJour();
+		  var nightTime = 1-dayTime;
                    
   		  //Set infos of the city
   		  html.set(dojo.byId("infosVilles"), content);
   		  //Set infos of ephemerides
-  		  html.set(dojo.byId("infosEphemerides"), "Sunrise: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Lever()) + "<br>Sunset: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Coucher()) +"<br>daytime: "+ ephemeridesObj.DureeJour() ); 
+  		  html.set(dojo.byId("infosEphemerides"), "Sunrise: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Lever()) + "<br>Sunset: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Coucher()) +"<br>Daytime: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.DureeJour())); 
 		  
-		  //var chartData = [80,20];
-		  var dureeday = 55;
-		  var dureenight = 45;
+	  
     	  //pieChart.addSeries("Day and Night time",chartData);
-    	  pieChart.addSeries("Day and Night time",[{y: dureeday, text: "Day",   stroke: "white", tooltip: dureeday},
-    	  {y: dureenight, text: "NightTime",   stroke: "white", tooltip: dureenight}]);
+    	  pieChart.addSeries("Day and Night time",[{y: dayTime, text: "Day",   stroke: "white", tooltip: Math.round(dayTime*100) + "% of the day"},
+    	  {y: nightTime, text: "Night",   stroke: "white", tooltip: Math.round(nightTime*100) + "% of the day"}]);
     		pieChart.render();
     		//Set background transparent
     		pieChart.surface.rawNode.childNodes[1].setAttribute('fill-opacity','0');
