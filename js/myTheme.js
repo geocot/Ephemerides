@@ -1,16 +1,14 @@
 define([
     "dojox/charting/SimpleTheme",
     "dojox/charting/themes/common"
-], function(SimpleTheme, themes){
+], function(Theme, themes){
      
-    themes.SitePen = new SimpleTheme({
+    themes.Ephemerides = new Theme({
         colors: [
-            "#A4CE67",
-            "#739363",
-            "#6B824A",
-            "#343434",
-            "#636563"
+            "#FFD700",
+            "#00008B"
+          
         ]
     });
-    return themes.SitePen;
+    return themes.Ephemerides;
 });

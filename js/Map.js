@@ -18,7 +18,7 @@ require(
     "dojox/charting/plot2d/Pie",
     "dojox/charting/action2d/Tooltip",
     "dojox/charting/action2d/MoveSlice",
-    "dojox/charting/themes/Claro"
+    "js/myTheme"
 
 
   	], 
@@ -57,6 +57,7 @@ require(
     //console.log("qc=" + ephemeridesObj.Lever())
     //console.log("qc=" + ephemeridesObj.Coucher())
 	
+	//Clear graphic when mouse out.
 	function closeDialog(){
 		map.graphics.clear();
 	};
@@ -128,10 +129,11 @@ require(
   		  //Set infos of the city
   		  html.set(dojo.byId("infosVilles"), content);
   		  //Set infos of ephemerides
-  		  html.set(dojo.byId("infosEphemerides"), "Sunrise: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Lever()) + "<br>Sunset: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Coucher()) +"<br>Daytime: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.DureeJour())); 
+  		  html.set(dojo.byId("infosEphemerides"), "Sunrise: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Lever()) + "<br>Sunset: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.Coucher()) +"<br>Daytime: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.DureeJour())+
+  		  "<br>Nigthtime: " + ephemeridesObj.Conversion_DecJour_Heure(ephemeridesObj.DureeNuit())); 
 		  
 	  
-    	  //pieChart.addSeries("Day and Night time",chartData);
+    	  //pieChart add data
     	  pieChart.addSeries("Day and Night time",[{y: dayTime, text: "Day",   stroke: "white", tooltip: Math.round(dayTime*100) + "% of the day"},
     	  {y: nightTime, text: "Night",   stroke: "white", tooltip: Math.round(nightTime*100) + "% of the day"}]);
     		pieChart.render();
