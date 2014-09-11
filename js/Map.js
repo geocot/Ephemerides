@@ -18,7 +18,7 @@ require(
     "dojox/charting/plot2d/Pie",
     "dojox/charting/action2d/Tooltip",
     "dojox/charting/action2d/MoveSlice",
-    "js/myTheme"
+    "js/ephemeridesTheme"								//**********************************************
 
 
   	], 
@@ -52,8 +52,12 @@ require(
      
     map.addLayer(coucheVilles);
     
+    //Get the date 
+    var newDate = new Date();
+    
+    
     //Initialize the object
-    var ephemeridesObj = new sunrisesunset( 48.8819970629341, -2.43299734457971, 1, 09, 09,2014);
+    var ephemeridesObj = new sunrisesunset( 48.8819970629341, -2.43299734457971, 1, newDate.getDate() , newDate.getMonth() + 1,newDate.getFullYear());
     //console.log("qc=" + ephemeridesObj.Lever())
     //console.log("qc=" + ephemeridesObj.Coucher())
 	
