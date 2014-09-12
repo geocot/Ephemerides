@@ -136,7 +136,7 @@ Coucher : function() // (LAT, LONG, Decalage, LeJour, LeMois, LAn)
 	return (Math.floor(12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)+Math.round(((12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage)-Math.floor(12+this._AngleHoraireHeure()+this._EquationTempsMinuteDEC()/60+(this.longitude*-1)*4/60+this.Decalage))*60,0)/60)/24;
 	},//virgule entre chaque fonction
 
-	// Donne les minutes en bas de zero sur 2 chiffres
+	//Donne les minutes en bas de zero sur 2 chiffres
 _deuxchiffres : function (nombre)
 	{
 	if (nombre < 10)
@@ -144,8 +144,32 @@ _deuxchiffres : function (nombre)
 	else
 	{retour = nombre}
 
-	return retour
+	return retour;
+}, 
+
+// calcule l'heure en fonction du fuseau horaire - retourne un objet Date
+getTimebyTimeZone : function (offset)
+	{
+	var newDate = new Date();
+	newDate.setTime(newDate.getTime() + (newDate.getTimezoneOffset() + offset*60) * 60 * 1000);
+	
+	return newDate;
+	},
+
+//Convert time to 00h00
+convertTimeFormat : function(separator, hourDec)
+	{
+	return hourDec.getHours() + separator + this._deuxchiffres(hourDec.getMinutes());
+	}
+
+/*
+ function HeureFuseau(mon_fuseau) {
+   // calcule l'heure en fonction du fuseau horaire - retourne un objet Date
+   var heure = new Date();  
+   heure.setTime(heure.getTime() + (heure.getTimezoneOffset() + mon_fuseau*60) * 60 * 1000);
+   return heure;
 }
+*/
 
   });
 });
