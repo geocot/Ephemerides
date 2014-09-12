@@ -156,6 +156,12 @@ require(
     		pieChart.surface.rawNode.childNodes[1].setAttribute('fill-opacity','0');
 			pieChart.surface.rawNode.childNodes[2].setAttribute('stroke-opacity','0');
 			pieChart.surface.rawNode.childNodes[3].setAttribute('fill-opacity','0');
+		
+		
+		var decimalTime = ephemeridesObj.decHour(ephemeridesObj.getTimebyTimeZone(fuseauHoraire));
+		var dayOrNight = ephemeridesObj.dayOrNight(parseFloat(decimalTime),parseFloat(ephemeridesObj.Lever()), parseFloat(ephemeridesObj.Coucher()) )
+		console.log(decimalTime + "," + ephemeridesObj.Lever()+ "," + ephemeridesObj.Coucher())
+		console.log(ephemeridesObj.dayOrNight(parseFloat(decimalTime),parseFloat(ephemeridesObj.Lever()), parseFloat(ephemeridesObj.Coucher()) ))
 		  /*
 		map.on("click", function(evt){
 		//map.graphics.clear();

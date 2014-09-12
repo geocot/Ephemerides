@@ -160,16 +160,24 @@ getTimebyTimeZone : function (offset)
 convertTimeFormat : function(separator, hourDec)
 	{
 	return hourDec.getHours() + separator + this._deuxchiffres(hourDec.getMinutes());
-	}
-
-/*
- function HeureFuseau(mon_fuseau) {
-   // calcule l'heure en fonction du fuseau horaire - retourne un objet Date
-   var heure = new Date();  
-   heure.setTime(heure.getTime() + (heure.getTimezoneOffset() + mon_fuseau*60) * 60 * 1000);
-   return heure;
-}
-*/
+	},
+//convert time in dec. 
+decHour : function (theDate){
+  var heure = theDate.getHours();
+  var minute = theDate.getMinutes();
+  var decHour = (((heure*60) + minute)/1440);
+  return decHour;
+ },
+//get if is daytime or nighttime
+dayOrNight : function (decTime, decTimeRise, decTimeSet)
+	{
+		var dayOrNight = 0
+		
+		if ((decTime > decTimeRise)&&(decTime<decTimeSet))
+			{dayOrNight = 1}
+			
+		return dayOrNight
+	} 
 
   });
 });
