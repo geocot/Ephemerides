@@ -1,6 +1,9 @@
-##The Great map of Sunrise and Sunset in the world ##
+##The Great map of Sunrise and Sunset in the World ##
 
-**Author:** Martin Couture, **Date:** September 2014, **For:** Tech Trek Idol
+**Author:** Martin Couture, **Date:** September 2014, **For:** Tech Trek Idol 2014
+
+
+**Try it at : [The Great map of Sunrise and Sunset in the World](http://membre.oricom.ca/publiccouture/sunrisesunset)**
 
 ### Brief description ###
 
@@ -9,11 +12,15 @@ You only need to put your mouse over a city (grey circles on the map) to have hi
 ![](http://membre.oricom.ca/publiccouture/sunrisesunset/readmeimg/Full.jpg)
 
 
-**Try it at : [The Great map of Sunrise and Sunset in the world](http://membre.oricom.ca/publiccouture/sunrisesunset)**
 
-Give them a try:
+###More explanation:###
 
-- **Bold** (`Ctrl+B`) and *Italic* (`Ctrl+I`)
+**1-** 
+- 
+- 
+- 
+- 
+- (`Ctrl+B`) and *Italic* (`Ctrl+I`)
 - Quotes (`Ctrl+Q`)
 - Code blocks (`Ctrl+K`)
 - Headings 1, 2, 3 (`Ctrl+1`, `Ctrl+2`, `Ctrl+3`)
