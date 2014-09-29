@@ -39,10 +39,14 @@ Another Dojo object has been created to hold some resusable functions. By linkin
 
 To have a nice look of mixing color togheter, I created my own theme in dojo format. See [here](http://membre.oricom.ca/publiccouture/sunrisesunset/js/ephemeridesTheme.js)
 
+A HTML and CSS file drive all this togheter
+
 Enjoy !
 
 [Martin Couture](mailto:mcouture@esri.ca)
 
 ----------
 
-**The time is in standard format, not in daylight saving time. 
+**The time is in standard format, not in daylight saving time.
+ 
+**I do a lot of search of on the web to have the sunrise and sunset formula. 
