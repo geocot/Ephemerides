@@ -1,6 +1,6 @@
 #The Great map of Sunrise and Sunset in the World #
 
-**Author:** Martin Couture, **Date:** September 2014, **For:** Tech Trek Idol 2014*
+**Author:** Martin Couture, **Date:** September 2014, **For:** Tech Trek Idol 2014
 
 
 ### **Try it at : [The Great map of Sunrise and Sunset in the World](http://membre.oricom.ca/publiccouture/sunrisesunset)** ###
