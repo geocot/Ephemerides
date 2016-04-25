@@ -3,7 +3,7 @@
 **Author:** Martin Couture, **Date:** September 2014, **For:** Tech Trek Idol 2014
 
 
-### **Try it at : [The Great map of Sunrise and Sunset in the World](http://membre.oricom.ca/publiccouture/sunrisesunset)** ###
+### **Try it at : [The Great map of Sunrise and Sunset in the World](http://www.continentcot.ca/sunrisesunset/)** ###
  
 #Overview #
 
@@ -11,7 +11,7 @@ You only need to put your mouse over a city (grey circles on the map) to have in
 
 > Clic on the image below for a larger view.
 
-![](http://membre.oricom.ca/publiccouture/sunrisesunset/readmeimg/Full.jpg)
+![](http://www.continentcot.ca/sunrisesunset/readmeimg/Full.jpg)
 
 
 ##In details:##
