@@ -11,7 +11,7 @@ You only need to put your mouse over a city (grey circles on the map) to have in
 
 > Clic on the image below for a larger view.
 
-![](http://www.continentcot.ca/sunrisesunset/readmeimg/full.jpg)
+![](http://www.continentcot.ca/sunrisesunset/sunrisesunset/readmeimg/full.jpg)
 
 
 ##In details:##
