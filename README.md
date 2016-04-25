@@ -32,13 +32,13 @@ The arrow show you how the selected city will appear when you will put your mous
 
 I have created a feature service with ArcGIS Online. This service include many fields like the info at the number 5 on the map. I used the population field to create a symbology with different circles sizes. I selected the imagery of the world as the background.
 
-After that, I created a JavaScript file to hold my map and my basic fonctions. This is where the header and footer are set and also the pie chart. See [here](http://membre.oricom.ca/publiccouture/sunrisesunset/js/map.js)
+After that, I created a JavaScript file to hold my map and my basic fonctions. This is where the header and footer are set and also the pie chart. See [here](http://www.continentcot.ca/sunrisesunset/js/map.js)
 
-Plus, I created 1 Dojo object that contain the mathematical formulas. This is use to calculate the rotation and the angle of the earth for each day of the year. With this, the app can calculate the sunrise and sunset for each city. See [here](http://membre.oricom.ca/publiccouture/sunrisesunset/js/sunrisesunset.js). 
+Plus, I created 1 Dojo object that contain the mathematical formulas. This is use to calculate the rotation and the angle of the earth for each day of the year. With this, the app can calculate the sunrise and sunset for each city. See [here](http://www.continentcot.ca/sunrisesunset/js/sunrisesunset.js). 
 
-Another Dojo object has been created to hold some reusable functions. By linking this object with another project, I will be able to reuse it (like the first dojo object created). See [here](http://membre.oricom.ca/publiccouture/sunrisesunset/js/coordinatesTools.js)
+Another Dojo object has been created to hold some reusable functions. By linking this object with another project, I will be able to reuse it (like the first dojo object created). See [here](http://www.continentcot.ca/sunrisesunset/js/coordinatesTools.js)
 
-To have a nice look of mixing color togheter, I created my own theme in dojo format. See [here](http://membre.oricom.ca/publiccouture/sunrisesunset/js/ephemeridesTheme.js)
+To have a nice look of mixing color togheter, I created my own theme in dojo format. See [here](http://www.continentcot.ca/sunrisesunset/js/ephemeridesTheme.js)
 
 A HTML and CSS file drive all this together
 
