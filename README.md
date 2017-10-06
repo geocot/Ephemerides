@@ -11,12 +11,9 @@ You only need to put your mouse over a city (grey circles on the map) to have in
 
 > Clic on the image below for a larger view.
 
-<<<<<<< HEAD
 ![](http://www.continentcot.ca/sunrisesunset/readmeimg/Full.jpg)
 =======
 ![](http://www.continentcot.ca/sunrisesunset/sunrisesunset/readmeimg/full.jpg)
->>>>>>> origin/master
-
 
 ##In details:##
 *(The numbers are associated with the numbers above)*
